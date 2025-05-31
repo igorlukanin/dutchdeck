@@ -1,0 +1,25 @@
+{
+  "name": "woorden",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Dutch learning flashcards app",
+  "scripts": {
+    "dev": "pnpm --parallel --filter './apps/*' dev",
+    "dev:app": "pnpm --filter app dev",
+    "dev:admin": "pnpm --filter admin dev",
+    "dev:web": "pnpm --filter web dev",
+    "build": "pnpm --filter './apps/*' build",
+    "lint": "pnpm --filter './apps/*' lint",
+    "clean": "pnpm --filter './apps/*' --filter './packages/*' clean",
+    "typecheck": "pnpm --filter './apps/*' --filter './packages/*' typecheck"
+  },
+  "devDependencies": {
+    "prettier": "^3.1.0",
+    "typescript": "^5.3.0"
+  },
+  "packageManager": "pnpm@8.12.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}
