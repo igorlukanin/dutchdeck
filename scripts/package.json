@@ -4,7 +4,11 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "clean-users": "node clean-users.js"
+    "clean-users": "node clean-users.js",
+    "setup-schema": "node setup-schema.js",
+    "import-words": "node final-import.js",
+    "check-words": "node import-words.js check",
+    "clear-words": "node import-words.js clear"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.8",
