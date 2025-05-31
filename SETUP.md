@@ -1,4 +1,4 @@
-# Woorden Setup Guide
+# DutchDeck Setup Guide
 
 ## Prerequisites
 - Node.js 18+
@@ -75,13 +75,13 @@ For HTTPS development with custom domains:
    ```
 
 Access via:
-- https://woorden.local
-- https://app.woorden.local  
-- https://admin.woorden.local
+- https://dutchdeck.local
+- https://app.dutchdeck.local  
+- https://admin.dutchdeck.local
 
 ## Test Accounts
 
-After setup, you can create test accounts via the registration page at http://localhost:3000/auth/register (or https://app.woorden.local/auth/register with HTTPS)
+After setup, you can create test accounts via the registration page at http://localhost:3000/auth/register (or https://app.dutchdeck.local/auth/register with HTTPS)
 
 ## Troubleshooting
 
