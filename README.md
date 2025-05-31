@@ -218,6 +218,13 @@ Dedicated Dutch language learners who want a comprehensive, structured approach 
   - [ ] Payment confirmation emails
   - [ ] Subscription management UI
 
+- [ ] **Email Service Setup**
+  - [ ] Set up Resend.com account
+  - [ ] Configure Supabase to use Resend SMTP
+  - [ ] Implement custom email templates
+  - [ ] Domain verification for professional emails
+  - [ ] Email delivery monitoring
+
 - [ ] **Premium Features (Future Tiers)**
   - [ ] Unlimited custom words
   - [ ] Advanced statistics
