@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import type { Database } from '@dutchdeck/db';
 
 type Word = Database['public']['Tables']['words']['Row'];
@@ -33,19 +33,41 @@ export function Flashcard({
 
   const handleSwipeUp = () => {
     onKnow();
-    resetCard();
+    resetCard(true);
   };
 
   const handleSwipeDown = () => {
     onDontKnow();
-    resetCard();
+    resetCard(false);
   };
 
-  const resetCard = () => {
+  const resetCard = (wasCorrect = false) => {
     setIsFlipped(false);
     setShowDetails(false);
-    setTimeout(onNext, 300);
+    setTimeout(() => onNext(wasCorrect), 300);
   };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      switch (e.key) {
+        case 'ArrowUp':
+          e.preventDefault();
+          handleSwipeUp();
+          break;
+        case 'ArrowDown':
+          e.preventDefault();
+          handleSwipeDown();
+          break;
+        case ' ':
+          e.preventDefault();
+          handleTap();
+          break;
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [handleSwipeUp, handleSwipeDown, handleTap]);
 
   const getTranslations = () => {
     const translations: { [key: string]: string | null } = {
@@ -111,7 +133,7 @@ export function Flashcard({
                 {word.dutch}
               </h2>
               <p className="text-sm text-gray-500">
-                Tap to reveal • Swipe up if you know • Swipe down if you don't
+                Tap/Space to reveal • ↑ if you know • ↓ if you don't
               </p>
             </div>
           )}
@@ -156,13 +178,13 @@ export function Flashcard({
       {/* Action buttons for desktop */}
       <div className="hidden md:flex gap-4 mt-8">
         <button
-          onClick={() => { onDontKnow(); resetCard(); }}
+          onClick={() => { onDontKnow(); resetCard(false); }}
           className="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
         >
           Don't Know
         </button>
         <button
-          onClick={() => { onKnow(); resetCard(); }}
+          onClick={() => { onKnow(); resetCard(true); }}
           className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
         >
           Know

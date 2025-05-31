@@ -89,7 +89,8 @@ export default function PracticePage() {
   };
 
   const handleKnow = async () => {
-    setCorrect(correct + 1);
+    const newCorrect = correct + 1;
+    setCorrect(newCorrect);
     // TODO: Update user progress in database
   };
 
@@ -97,12 +98,14 @@ export default function PracticePage() {
     // TODO: Update user progress in database
   };
 
-  const handleNext = () => {
+  const handleNext = (wasCorrect = false) => {
+    const currentCorrect = wasCorrect ? correct + 1 : correct;
+    
     if (currentIndex < words.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
       // Session complete
-      router.push(`/practice/complete?correct=${correct}&total=${words.length}`);
+      router.push(`/practice/complete?correct=${currentCorrect}&total=${words.length}`);
     }
   };
 

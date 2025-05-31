@@ -80,6 +80,7 @@ Uses Supabase with schema in `packages/db/src/schema.sql`. Key tables:
 3. **Follow TypeScript strictly** - All apps have strict TypeScript configs
 4. **Test with real data** - Database has comprehensive schema for flashcard learning
 5. **Run quality checks** - Always run `pnpm lint` and `pnpm typecheck` before committing
+6. **Before committing to Git, always run linter and fix all found errors**
 
 ## Key Features in Development
 
