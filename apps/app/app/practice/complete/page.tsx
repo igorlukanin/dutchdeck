@@ -26,11 +26,11 @@ export default function PracticeCompletePage() {
           <div className="grid grid-cols-2 gap-4">
             <div>
               <p className="text-sm text-gray-500 mb-1">Words Practiced</p>
-              <p className="text-2xl font-bold text-dutch-blue">{total}</p>
+              <p className="text-2xl font-bold text-[#21468B]">{total}</p>
             </div>
             <div>
               <p className="text-sm text-gray-500 mb-1">Accuracy</p>
-              <p className="text-2xl font-bold text-dutch-orange">{accuracy}%</p>
+              <p className="text-2xl font-bold text-[#FF6B00]">{accuracy}%</p>
             </div>
           </div>
         </div>
@@ -38,7 +38,7 @@ export default function PracticeCompletePage() {
         <div className="space-y-3">
           <Link
             href="/practice"
-            className="block w-full bg-dutch-blue text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+            className="block w-full bg-[#21468B] text-white py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors"
           >
             Practice More
           </Link>

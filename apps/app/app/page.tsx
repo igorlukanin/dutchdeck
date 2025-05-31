@@ -90,12 +90,12 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div className="bg-white p-6 rounded-lg shadow">
             <h3 className="text-sm font-medium text-gray-500 mb-2">Words Learned</h3>
-            <p className="text-3xl font-bold text-dutch-blue">{stats.wordsLearned}</p>
+            <p className="text-3xl font-bold text-[#21468B]">{stats.wordsLearned}</p>
           </div>
           
           <div className="bg-white p-6 rounded-lg shadow">
             <h3 className="text-sm font-medium text-gray-500 mb-2">Current Streak</h3>
-            <p className="text-3xl font-bold text-dutch-orange">
+            <p className="text-3xl font-bold text-[#FF6B00]">
               {stats.currentStreak} {stats.currentStreak === 1 ? 'day' : 'days'}
             </p>
           </div>
@@ -116,14 +116,14 @@ export default function Home() {
         <div className="space-y-4">
           <Link
             href="/practice"
-            className="block w-full bg-dutch-blue text-white text-center py-4 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+            className="block w-full bg-[#21468B] text-white text-center py-4 rounded-lg font-medium hover:bg-blue-700 transition-colors"
           >
             Start Practice Session
           </Link>
           
           <Link
             href="/assessment"
-            className="block w-full bg-white text-dutch-blue text-center py-4 rounded-lg font-medium border-2 border-dutch-blue hover:bg-gray-50 transition-colors"
+            className="block w-full bg-white text-[#21468B] text-center py-4 rounded-lg font-medium border-2 border-[#21468B] hover:bg-gray-50 transition-colors"
           >
             Take Assessment Test
           </Link>
@@ -131,14 +131,14 @@ export default function Home() {
           <div className="grid grid-cols-2 gap-4">
             <Link
               href="/progress"
-              className="block text-center py-3 text-gray-700 hover:text-dutch-blue transition-colors"
+              className="block text-center py-3 text-gray-700 hover:text-[#21468B] transition-colors"
             >
               View Progress →
             </Link>
             
             <Link
               href="/settings"
-              className="block text-center py-3 text-gray-700 hover:text-dutch-blue transition-colors"
+              className="block text-center py-3 text-gray-700 hover:text-[#21468B] transition-colors"
             >
               Settings →
             </Link>

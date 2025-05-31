@@ -102,7 +102,7 @@ export function Flashcard({
           absolute inset-0 bg-white rounded-2xl shadow-lg
           flex flex-col items-center justify-center p-8
           border-2 border-gray-200
-          ${isFlipped ? 'border-dutch-blue' : ''}
+          ${isFlipped ? 'border-[#21468B]' : ''}
         `}>
           {/* Front of card - Dutch word */}
           {!isFlipped && (
@@ -119,7 +119,7 @@ export function Flashcard({
           {/* Back of card - Translations */}
           {isFlipped && (
             <div className="text-center w-full">
-              <h3 className="text-2xl font-semibold text-dutch-blue mb-6">
+              <h3 className="text-2xl font-semibold text-[#21468B] mb-6">
                 {getTranslations()}
               </h3>
               
@@ -129,18 +129,18 @@ export function Flashcard({
                   {word.gender && (
                     <div>
                       <span className="font-medium text-gray-600">Article:</span>{' '}
-                      <span className="text-dutch-blue">{word.gender}</span>
+                      <span className="text-[#21468B]">{word.gender}</span>
                     </div>
                   )}
                   {word.verb_type && (
                     <div>
                       <span className="font-medium text-gray-600">Verb type:</span>{' '}
-                      <span className="text-dutch-blue">{word.verb_type}</span>
+                      <span className="text-[#21468B]">{word.verb_type}</span>
                     </div>
                   )}
                   <div>
                     <span className="font-medium text-gray-600">Level:</span>{' '}
-                    <span className="text-dutch-blue">{word.cefr_level}</span>
+                    <span className="text-[#21468B]">{word.cefr_level}</span>
                   </div>
                 </div>
               )}

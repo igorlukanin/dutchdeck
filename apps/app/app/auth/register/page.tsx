@@ -55,7 +55,7 @@ export default function RegisterPage() {
                 type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-dutch-blue focus:border-dutch-blue"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#21468B] focus:border-[#21468B]"
               />
             </div>
             
@@ -69,7 +69,7 @@ export default function RegisterPage() {
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-dutch-blue focus:border-dutch-blue"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#21468B] focus:border-[#21468B]"
               />
             </div>
             
@@ -84,7 +84,7 @@ export default function RegisterPage() {
                 minLength={6}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-dutch-blue focus:border-dutch-blue"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#21468B] focus:border-[#21468B]"
               />
               <p className="mt-1 text-xs text-gray-500">At least 6 characters</p>
             </div>
@@ -94,7 +94,7 @@ export default function RegisterPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-dutch-blue hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dutch-blue disabled:opacity-50"
+              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#21468B] hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#21468B] disabled:opacity-50"
             >
               {loading ? 'Creating account...' : 'Create account'}
             </button>
@@ -102,7 +102,7 @@ export default function RegisterPage() {
 
           <div className="text-sm text-center">
             <span className="text-gray-600">Already have an account? </span>
-            <Link href="/auth/login" className="font-medium text-dutch-blue hover:text-blue-700">
+            <Link href="/auth/login" className="font-medium text-[#21468B] hover:text-blue-700">
               Sign in
             </Link>
           </div>
