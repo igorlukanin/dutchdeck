@@ -1,5 +1,5 @@
 {
-  "name": "woorden",
+  "name": "dutchdeck",
   "version": "0.0.1",
   "private": true,
   "description": "Dutch learning flashcards app",
@@ -8,7 +8,7 @@
     "dev:app": "pnpm --filter app dev",
     "dev:admin": "pnpm --filter admin dev",
     "dev:web": "pnpm --filter web dev",
-    "dev:open": "(sleep 3 && open https://app.woorden.local && open https://admin.woorden.local && open https://woorden.local) & pnpm dev",
+    "dev:open": "(sleep 3 && open https://app.dutchdeck.local && open https://admin.dutchdeck.local && open https://dutchdeck.local) & pnpm dev",
     "dev:all": "pnpm proxy:start && pnpm dev:open",
     "setup:hosts": "sudo ./scripts/setup-hosts.sh",
     "setup:certs": "./scripts/setup-certs.sh",

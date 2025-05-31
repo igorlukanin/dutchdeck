@@ -1,4 +1,4 @@
-import { supabase } from '@woorden/db';
+import { supabase } from '@dutchdeck/db';
 
 export async function signUp(email: string, password: string, name?: string) {
   const { data, error } = await supabase.auth.signUp({

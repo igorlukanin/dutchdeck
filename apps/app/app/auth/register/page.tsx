@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { signUp } from '@woorden/utils';
+import { signUp } from '@dutchdeck/utils';
 
 export default function RegisterPage() {
   const router = useRouter();

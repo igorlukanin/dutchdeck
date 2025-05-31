@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { getUser } from '@woorden/utils';
-import { supabase } from '@woorden/db';
+import { getUser } from '@dutchdeck/utils';
+import { supabase } from '@dutchdeck/db';
 
 export default function Home() {
   const router = useRouter();

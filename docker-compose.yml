@@ -12,8 +12,8 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
     networks:
-      - woorden
+      - dutchdeck
 
 networks:
-  woorden:
+  dutchdeck:
     driver: bridge

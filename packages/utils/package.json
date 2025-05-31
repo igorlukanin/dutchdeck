@@ -1,5 +1,5 @@
 {
-  "name": "@woorden/utils",
+  "name": "@dutchdeck/utils",
   "version": "0.0.1",
   "private": true,
   "main": "./src/index.ts",
@@ -9,7 +9,7 @@
     "clean": "rm -rf dist .turbo"
   },
   "dependencies": {
-    "@woorden/db": "workspace:*"
+    "@dutchdeck/db": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.3.0"

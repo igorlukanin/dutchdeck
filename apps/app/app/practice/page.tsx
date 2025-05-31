@@ -2,10 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Flashcard, ProgressBar } from '@woorden/ui';
-import { supabase } from '@woorden/db';
-import { getUser } from '@woorden/utils';
-import type { Database } from '@woorden/db';
+import { Flashcard, ProgressBar } from '@dutchdeck/ui';
+import { supabase } from '@dutchdeck/db';
+import { getUser } from '@dutchdeck/utils';
+import type { Database } from '@dutchdeck/db';
 
 type Word = Database['public']['Tables']['words']['Row'];
 

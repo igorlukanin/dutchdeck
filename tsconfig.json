@@ -19,9 +19,9 @@
     "composite": true,
     "baseUrl": ".",
     "paths": {
-      "@woorden/ui": ["./packages/ui/src"],
-      "@woorden/db": ["./packages/db/src"],
-      "@woorden/utils": ["./packages/utils/src"]
+      "@dutchdeck/ui": ["./packages/ui/src"],
+      "@dutchdeck/db": ["./packages/db/src"],
+      "@dutchdeck/utils": ["./packages/utils/src"]
     }
   },
   "exclude": ["node_modules", "dist", "build", ".next"]

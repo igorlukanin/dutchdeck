@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import type { Database } from '@woorden/db';
+import type { Database } from '@dutchdeck/db';
 
 type Word = Database['public']['Tables']['words']['Row'];
 

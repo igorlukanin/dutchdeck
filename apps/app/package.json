@@ -1,5 +1,5 @@
 {
-  "name": "@woorden/app",
+  "name": "@dutchdeck/app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -13,9 +13,9 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "next": "15.3.3",
-    "@woorden/ui": "workspace:*",
-    "@woorden/db": "workspace:*",
-    "@woorden/utils": "workspace:*"
+    "@dutchdeck/ui": "workspace:*",
+    "@dutchdeck/db": "workspace:*",
+    "@dutchdeck/utils": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5",

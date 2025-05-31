@@ -19,11 +19,11 @@ mkdir -p "$CERT_DIR"
 # Generate certificates with mkcert
 echo "Generating SSL certificates..."
 cd "$CERT_DIR"
-mkcert "woorden.local" "*.woorden.local"
+sudo mkcert "dutchdeck.local" "*.dutchdeck.local"
 
 # Rename for clarity
-mv woorden.local+1.pem woorden.local.pem
-mv woorden.local+1-key.pem woorden.local-key.pem
+mv dutchdeck.local+1.pem dutchdeck.local.pem
+mv dutchdeck.local+1-key.pem dutchdeck.local-key.pem
 
 cd ../..
 
@@ -36,6 +36,6 @@ echo "2. Start nginx proxy: docker-compose up -d"
 echo "3. Run your apps: pnpm dev"
 echo ""
 echo "You can then access:"
-echo "  - https://woorden.local"
-echo "  - https://app.woorden.local"
-echo "  - https://admin.woorden.local"
+echo "  - https://dutchdeck.local"
+echo "  - https://app.dutchdeck.local"
+echo "  - https://admin.dutchdeck.local"

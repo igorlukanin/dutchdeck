@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { signIn } from '@woorden/utils';
+import { signIn } from '@dutchdeck/utils';
 
 export default function LoginPage() {
   const router = useRouter();

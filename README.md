@@ -1,4 +1,4 @@
-# Dutch Learning Flashcards App
+# DutchDeck - Dutch Learning Flashcards App
 
 ## Overview
 
@@ -75,9 +75,9 @@ Dedicated Dutch language learners who want a comprehensive, structured approach 
 - [x] **Project Setup**
   - [x] Initialize monorepo structure with pnpm workspaces
   - [x] Create three Next.js apps:
-    - [x] `/apps/app` - Main learning app (app.woorden.nl)
-    - [x] `/apps/admin` - Admin dashboard (admin.woorden.nl)
-    - [x] `/apps/web` - Marketing website (woorden.nl)
+    - [x] `/apps/app` - Main learning app (app.dutchdeck.com)
+    - [x] `/apps/admin` - Admin dashboard (admin.dutchdeck.com)
+    - [x] `/apps/web` - Marketing website (dutchdeck.com)
   - [x] Set up shared packages:
     - [x] `/packages/ui` - Shared UI components
     - [x] `/packages/db` - Database types and queries

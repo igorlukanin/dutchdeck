@@ -48,13 +48,13 @@ importers:
 
   apps/app:
     dependencies:
-      '@woorden/db':
+      '@dutchdeck/db':
         specifier: workspace:*
         version: link:../../packages/db
-      '@woorden/ui':
+      '@dutchdeck/ui':
         specifier: workspace:*
         version: link:../../packages/ui
-      '@woorden/utils':
+      '@dutchdeck/utils':
         specifier: workspace:*
         version: link:../../packages/utils
       next:
@@ -151,22 +151,13 @@ importers:
 
   packages/utils:
     dependencies:
-      '@woorden/db':
+      '@dutchdeck/db':
         specifier: workspace:*
         version: link:../db
     devDependencies:
       typescript:
         specifier: ^5.3.0
         version: 5.8.3
-
-  scripts:
-    dependencies:
-      '@supabase/supabase-js':
-        specifier: ^2.49.8
-        version: 2.49.8
-      dotenv:
-        specifier: ^16.5.0
-        version: 16.5.0
 
 packages:
 
@@ -816,11 +807,6 @@ packages:
   /detect-libc@2.0.4:
     resolution: {integrity: sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==}
     engines: {node: '>=8'}
-
-  /dotenv@16.5.0:
-    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
-    engines: {node: '>=12'}
-    dev: false
 
   /enhanced-resolve@5.18.1:
     resolution: {integrity: sha512-ZSW3ma5GkcQBIpwZTSRAI8N71Uuwgs93IezB7mf7R60tC8ZbJideoDNKjHn2O9KIlx6rkGTTEk1xUCK2E1Y2Yg==}
