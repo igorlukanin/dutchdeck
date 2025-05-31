@@ -31,11 +31,15 @@ export default function Home() {
       setUser(currentUser);
       
       // Load user stats
-      const { data: settings } = await supabase
+      const { data: settings, error: settingsError } = await supabase
         .from('user_settings')
         .select('current_streak, last_practice_date')
         .eq('user_id', currentUser.id)
         .single();
+        
+      if (settingsError) {
+        console.log('No settings found, using defaults');
+      }
         
       const { count: wordsCount } = await supabase
         .from('user_progress')
