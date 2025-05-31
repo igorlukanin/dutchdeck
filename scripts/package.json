@@ -1,0 +1,13 @@
+{
+  "name": "@woorden/scripts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "clean-users": "node clean-users.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.8",
+    "dotenv": "^16.5.0"
+  }
+}

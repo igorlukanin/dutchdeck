@@ -44,26 +44,49 @@ Dedicated Dutch language learners who want a comprehensive, structured approach 
 - **Individual**: €39 one-time payment
 - **Family (5 accounts)**: €79 one-time payment
 
+## Current Status
+
+### ✅ Completed
+- Monorepo structure with pnpm workspaces
+- Three Next.js apps (app, admin, web)
+- Database schema with all tables
+- Authentication system (sign up, sign in, sign out)
+- Basic flashcard UI with gestures
+- Progress tracking dashboard
+- HTTPS local development with Docker nginx proxy
+
+### 🚧 In Progress
+- Multi-language support
+- Assessment test
+- Spaced repetition algorithm
+
+### 📋 Next Steps
+1. Load real words into database
+2. Implement assessment test
+3. Add spaced repetition algorithm
+4. Build admin dashboard
+5. Create marketing website
+
 ## TODO
 
 ### Development
 
 #### Phase 1: MVP (Core Learning Experience)
-- [ ] **Project Setup**
-  - [ ] Initialize monorepo structure with pnpm workspaces
-  - [ ] Create three Next.js apps:
-    - [ ] `/apps/app` - Main learning app (app.woorden.nl)
-    - [ ] `/apps/admin` - Admin dashboard (admin.woorden.nl)
-    - [ ] `/apps/web` - Marketing website (woorden.nl)
-  - [ ] Set up shared packages:
-    - [ ] `/packages/ui` - Shared UI components
-    - [ ] `/packages/db` - Database types and queries
-    - [ ] `/packages/utils` - Shared utilities
-  - [ ] Configure Tailwind CSS + shadcn/ui across all apps
-  - [ ] Set up Supabase project and authentication
+- [x] **Project Setup**
+  - [x] Initialize monorepo structure with pnpm workspaces
+  - [x] Create three Next.js apps:
+    - [x] `/apps/app` - Main learning app (app.woorden.nl)
+    - [x] `/apps/admin` - Admin dashboard (admin.woorden.nl)
+    - [x] `/apps/web` - Marketing website (woorden.nl)
+  - [x] Set up shared packages:
+    - [x] `/packages/ui` - Shared UI components
+    - [x] `/packages/db` - Database types and queries
+    - [x] `/packages/utils` - Shared utilities
+  - [x] Configure Tailwind CSS + shadcn/ui across all apps
+  - [x] Set up Supabase project and authentication
   - [ ] Set up Vercel deployment pipeline with preview URLs
   - [ ] Configure PostHog for analytics
-  - [ ] Set up development environment and Git repository
+  - [x] Set up development environment and Git repository
 
 - [ ] **Admin Dashboard**
   - [ ] Simple admin authentication (your account only)
@@ -72,19 +95,19 @@ Dedicated Dutch language learners who want a comprehensive, structured approach 
   - [ ] User activity feed
   - [ ] Basic analytics charts
 
-- [ ] **Database Schema Design**
-  - [ ] Users table (email, name, languages, created_at)
-  - [ ] Words table (dutch, english, russian, gender, verb_type, cefr_level, source)
-  - [ ] User progress table (user_id, word_id, familiarity_score, last_reviewed, times_reviewed)
-  - [ ] User settings (active_word_count, daily_goal, interface_language)
-  - [ ] Sources table (books, chapters, Duolingo buckets)
-  - [ ] Word-source relationships
+- [x] **Database Schema Design**
+  - [x] Users table (email, name, languages, created_at)
+  - [x] Words table (dutch, english, russian, gender, verb_type, cefr_level, source)
+  - [x] User progress table (user_id, word_id, familiarity_score, last_reviewed, times_reviewed)
+  - [x] User settings (active_word_count, daily_goal, interface_language)
+  - [x] Sources table (books, chapters, Duolingo buckets)
+  - [x] Word-source relationships
 
-- [ ] **Authentication System**
-  - [ ] Email/password registration and login
-  - [ ] Password reset functionality
-  - [ ] Session management
-  - [ ] Protected routes
+- [x] **Authentication System**
+  - [x] Email/password registration and login
+  - [x] Password reset functionality
+  - [x] Session management
+  - [x] Protected routes
 
 - [ ] **Assessment Test**
   - [ ] Random selection of 20 words with increasing difficulty
@@ -92,12 +115,12 @@ Dedicated Dutch language learners who want a comprehensive, structured approach 
   - [ ] Algorithm to determine starting level based on responses
   - [ ] Skip test option ("start from scratch")
 
-- [ ] **Core Flashcard System**
-  - [ ] Flashcard UI with Dutch word display
-  - [ ] Tap to reveal translations (multiple languages)
-  - [ ] Tap-and-hold for extended info (de/het, verb type, examples)
-  - [ ] Swipe gestures for navigation
-  - [ ] Mobile-optimized touch interactions
+- [x] **Core Flashcard System**
+  - [x] Flashcard UI with Dutch word display
+  - [x] Tap to reveal translations (multiple languages)
+  - [x] Tap-and-hold for extended info (de/het, verb type, examples)
+  - [x] Swipe gestures for navigation
+  - [x] Mobile-optimized touch interactions
 
 - [ ] **Spaced Repetition Algorithm**
   - [ ] Implement SM-2 or similar algorithm
@@ -111,17 +134,17 @@ Dedicated Dutch language learners who want a comprehensive, structured approach 
   - [ ] Display translations in all selected languages
   - [ ] Quick language add/change from flashcard view
 
-- [ ] **Progress Tracking**
-  - [ ] Words learned counter
-  - [ ] Current streak tracking
-  - [ ] Daily/weekly statistics
-  - [ ] Accuracy metrics
-  - [ ] CEFR level progress indicator
+- [x] **Progress Tracking**
+  - [x] Words learned counter
+  - [x] Current streak tracking
+  - [x] Daily/weekly statistics
+  - [x] Accuracy metrics
+  - [x] CEFR level progress indicator
 
-- [ ] **Basic UI/UX**
-  - [ ] Clean black-and-white design with Dutch flag accents
-  - [ ] Mobile-first responsive design
-  - [ ] Loading states and error handling
+- [x] **Basic UI/UX**
+  - [x] Clean black-and-white design with Dutch flag accents
+  - [x] Mobile-first responsive design
+  - [x] Loading states and error handling
   - [ ] Offline mode basics (practice without saving)
 
 #### Phase 2: Content & Data Tools
