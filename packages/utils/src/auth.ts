@@ -12,29 +12,6 @@ export async function signUp(email: string, password: string, name?: string) {
   });
 
   if (error) throw error;
-
-  // Create user profile
-  if (data.user) {
-    const { error: profileError } = await supabase
-      .from('users')
-      .insert({
-        id: data.user.id,
-        email: data.user.email!,
-        name,
-      });
-
-    if (profileError) throw profileError;
-
-    // Create default settings
-    const { error: settingsError } = await supabase
-      .from('user_settings')
-      .insert({
-        user_id: data.user.id,
-      });
-
-    if (settingsError) throw settingsError;
-  }
-
   return data;
 }
 
