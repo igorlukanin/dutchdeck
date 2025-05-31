@@ -48,6 +48,15 @@ importers:
 
   apps/app:
     dependencies:
+      '@woorden/db':
+        specifier: workspace:*
+        version: link:../../packages/db
+      '@woorden/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
+      '@woorden/utils':
+        specifier: workspace:*
+        version: link:../../packages/utils
       next:
         specifier: 15.3.3
         version: 15.3.3(react-dom@19.1.0)(react@19.1.0)
@@ -141,6 +150,10 @@ importers:
         version: 5.8.3
 
   packages/utils:
+    dependencies:
+      '@woorden/db':
+        specifier: workspace:*
+        version: link:../db
     devDependencies:
       typescript:
         specifier: ^5.3.0

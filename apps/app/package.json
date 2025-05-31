@@ -12,7 +12,10 @@
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "next": "15.3.3"
+    "next": "15.3.3",
+    "@woorden/ui": "workspace:*",
+    "@woorden/db": "workspace:*",
+    "@woorden/utils": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5",

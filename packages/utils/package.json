@@ -8,6 +8,9 @@
     "typecheck": "tsc --noEmit",
     "clean": "rm -rf dist .turbo"
   },
+  "dependencies": {
+    "@woorden/db": "workspace:*"
+  },
   "devDependencies": {
     "typescript": "^5.3.0"
   }

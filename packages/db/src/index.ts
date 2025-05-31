@@ -1,2 +1,2 @@
-// Database client and types will be exported from here
-export {};
+export * from './client';
+export * from './types';
