@@ -35,12 +35,41 @@ The full schema includes:
 - Row Level Security policies
 - Automatic triggers for updated_at timestamps
 
-### 4. Enable Authentication
+### 4. Configure Email with Resend
+
+1. **Create a Resend account** at https://resend.com
+2. **Get your API key** from Resend dashboard
+3. **Add and verify your domain** in Resend (or use their testing domain)
+
+4. **Configure Supabase to use Resend:**
+   - Go to Supabase Dashboard → Project Settings → Auth
+   - Scroll to "SMTP Settings"
+   - Enable "Enable Custom SMTP"
+   - Enter these settings:
+     - **Sender email**: noreply@yourdomain.com (or your verified email)
+     - **Sender name**: Woorden (or your app name)
+     - **Host**: smtp.resend.com
+     - **Port**: 465
+     - **Username**: resend
+     - **Password**: Your Resend API key (starts with re_)
+     - **Secure**: Yes (SSL)
+   - Click "Save"
+
+5. **Test the configuration:**
+   - Send a test email from Supabase
+   - Try signing up with a new account
+
+### 5. Enable Authentication
 
 In Supabase Dashboard:
 1. Go to Authentication → Providers
 2. Ensure Email provider is enabled
-3. Set up email templates if needed
+3. Customize email templates:
+   - Go to Authentication → Email Templates
+   - For each template type (Confirm signup, Reset password, Magic Link):
+     - Copy the HTML from the corresponding file in `/email-templates/`
+     - Paste into the template editor
+     - Save changes
 
 ### 5. Run the Development Server
 
