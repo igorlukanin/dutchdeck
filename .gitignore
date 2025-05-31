@@ -45,3 +45,6 @@ coverage/
 
 # PostHog
 .posthog/
+
+# SSL Certificates
+nginx/certs/
