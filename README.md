@@ -249,6 +249,13 @@ Dedicated Dutch language learners who want a comprehensive, structured approach 
     - [ ] Test name pronunciation with non-Dutch speakers
     - [ ] Get feedback from beta testers on name preferences
   - [ ] Domain registration (.nl and .com)
+  - [ ] **Post-naming tasks**
+    - [ ] Rename Supabase project to match chosen name
+    - [ ] Update PostHog project name
+    - [ ] Update all code references from "woorden" to new name
+    - [ ] Update package names in package.json files
+    - [ ] Update repository name (if needed)
+    - [ ] Update environment variables
   - [ ] Logo and visual identity
   - [ ] Brand guidelines
 
