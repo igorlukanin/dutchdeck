@@ -1,2 +1,2 @@
-// UI components will be exported from here
-export {};
+export { Flashcard } from './components/Flashcard';
+export { ProgressBar } from './components/ProgressBar';
