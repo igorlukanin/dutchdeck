@@ -54,9 +54,34 @@ pnpm dev:admin  # Admin on :3001
 pnpm dev:web    # Marketing on :3002
 ```
 
+## Local HTTPS Setup (Optional)
+
+For HTTPS development with custom domains:
+
+1. Install mkcert:
+   ```bash
+   brew install mkcert
+   mkcert -install  # Run in terminal, needs sudo
+   ```
+
+2. Run setup:
+   ```bash
+   pnpm setup       # Sets up hosts file and generates certificates
+   ```
+
+3. Start development:
+   ```bash
+   pnpm dev:all     # Starts nginx proxy + all apps
+   ```
+
+Access via:
+- https://woorden.local
+- https://app.woorden.local  
+- https://admin.woorden.local
+
 ## Test Accounts
 
-After setup, you can create test accounts via the registration page at http://localhost:3000/auth/register
+After setup, you can create test accounts via the registration page at http://localhost:3000/auth/register (or https://app.woorden.local/auth/register with HTTPS)
 
 ## Troubleshooting
 
