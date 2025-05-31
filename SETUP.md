@@ -22,19 +22,18 @@ cp .env.local.example .env.local
 
 1. Go to your Supabase project dashboard
 2. Navigate to SQL Editor
-3. Run the following SQL to create all necessary tables:
+3. Copy the entire contents of `packages/db/src/schema.sql`
+4. Paste and run it in the SQL Editor
 
-```sql
--- Copy and paste the contents of packages/db/src/schema.sql
-```
-
-The schema includes:
+The full schema includes:
 - Users table (extends Supabase auth)
 - Words table for Dutch vocabulary
 - User progress tracking
 - User settings
-- Sources for word origins
+- Sources for word origins (books, chapters)
+- Word-source relationships
 - Row Level Security policies
+- Automatic triggers for updated_at timestamps
 
 ### 4. Enable Authentication
 
