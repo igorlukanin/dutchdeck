@@ -18,7 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     checkAuth();
-  }, []);
+  }, [router]);
 
   const checkAuth = async () => {
     try {
@@ -66,87 +66,64 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
+      <div className="h-screen flex items-center justify-center">
         <div className="text-gray-500">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <header className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800">
-            Welcome back{user?.user_metadata?.name ? `, ${user.user_metadata.name}` : ''}!
-          </h1>
+    <div className="h-screen bg-white">
+      <div className="max-w-md mx-auto px-6 py-16">
+        {/* Minimal header */}
+        <div className="flex justify-end items-center mb-20">
           <button
             onClick={async () => {
               await supabase.auth.signOut();
               router.push('/auth/login');
             }}
-            className="text-gray-600 hover:text-gray-800"
+            className="text-xs text-gray-400 hover:text-black transition-colors"
           >
             Sign out
           </button>
-        </header>
+        </div>
 
-        {/* Stats cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">Words Learned</h3>
-            <p className="text-3xl font-bold text-[#21468B]">{stats.wordsLearned}</p>
-          </div>
+        {/* Hero section */}
+        <div className="text-center mb-32">
+          <h1 className="heading-ultra text-black mb-8">
+            {user?.user_metadata?.name || 'Practice'}
+          </h1>
           
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">Current Streak</h3>
-            <p className="text-3xl font-bold text-[#FF6B00]">
-              {stats.currentStreak} {stats.currentStreak === 1 ? 'day' : 'days'}
-            </p>
-          </div>
-          
-          <div className="bg-white p-6 rounded-lg shadow">
-            <h3 className="text-sm font-medium text-gray-500 mb-2">Today's Status</h3>
-            <p className="text-2xl font-bold">
-              {stats.todayPracticed ? (
-                <span className="text-green-500">✓ Practiced</span>
-              ) : (
-                <span className="text-gray-400">Not yet</span>
-              )}
-            </p>
+          {/* Simple stats */}
+          <div className="space-y-2 mb-16">
+            <div className="text-sm text-gray-500">
+              {stats.wordsLearned} words learned
+            </div>
+            {stats.currentStreak > 0 && (
+              <div className="text-sm text-gray-500">
+                {stats.currentStreak} day{stats.currentStreak !== 1 ? 's' : ''} streak
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Action buttons */}
-        <div className="space-y-4">
+        {/* Main action */}
+        <div className="text-center mb-20">
           <Link
             href="/practice"
-            className="block w-full bg-[#21468B] text-white text-center py-4 rounded-lg font-medium hover:bg-blue-700 transition-colors"
+            className="inline-block"
           >
-            Start Practice Session
+            <div className="w-64 h-64 bg-black rounded-3xl flex items-center justify-center hover:bg-gray-900 transition-colors cursor-pointer">
+              <span className="text-white text-2xl font-medium">Practice</span>
+            </div>
           </Link>
-          
-          <Link
-            href="/assessment"
-            className="block w-full bg-white text-[#21468B] text-center py-4 rounded-lg font-medium border-2 border-[#21468B] hover:bg-gray-50 transition-colors"
-          >
-            Take Assessment Test
-          </Link>
-          
-          <div className="grid grid-cols-2 gap-4">
-            <Link
-              href="/progress"
-              className="block text-center py-3 text-gray-700 hover:text-[#21468B] transition-colors"
-            >
-              View Progress →
-            </Link>
-            
-            <Link
-              href="/settings"
-              className="block text-center py-3 text-gray-700 hover:text-[#21468B] transition-colors"
-            >
-              Settings →
-            </Link>
-          </div>
+        </div>
+
+        {/* Minimal bottom navigation */}
+        <div className="flex justify-center items-center space-x-12">
+          <Link href="/settings" className="w-6 h-6 bg-gray-200 rounded-full"></Link>
+          <div className="w-2 h-2 bg-black rounded-full"></div>
+          <Link href="/progress" className="text-black text-2xl">+</Link>
         </div>
       </div>
     </div>

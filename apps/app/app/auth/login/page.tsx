@@ -28,65 +28,65 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50">
-      <div className="max-w-md w-full space-y-8 p-8 bg-white rounded-lg shadow">
-        <div>
-          <h2 className="text-3xl font-bold text-center">Welcome back</h2>
-          <p className="mt-2 text-center text-gray-600">
-            Sign in to continue learning Dutch
+    <div className="h-screen bg-white">
+      <div className="max-w-md mx-auto px-6 py-16">
+
+        {/* Hero section */}
+        <div className="text-center mb-20">
+          <h1 className="heading-ultra text-black mb-8">
+            Login
+          </h1>
+          <p className="text-sm text-gray-500 mb-16">
+            Continue learning Dutch
           </p>
         </div>
         
-        <form onSubmit={handleSubmit} className="mt-8 space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-8">
           {error && (
-            <div className="bg-red-50 text-red-500 p-3 rounded-md text-sm">
+            <div className="bg-red-50 text-red-500 p-4 rounded-2xl text-sm text-center">
               {error}
             </div>
           )}
           
-          <div className="space-y-4">
+          <div className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email
-              </label>
               <input
                 id="email"
                 type="email"
+                placeholder="Email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#21468B] focus:border-[#21468B]"
+                className="w-full px-0 py-4 text-lg bg-transparent border-0 border-b border-gray-200 focus:outline-none focus:border-black placeholder-gray-400"
               />
             </div>
             
             <div>
-              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Password
-              </label>
               <input
                 id="password"
                 type="password"
+                placeholder="Password"
                 required
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-[#21468B] focus:border-[#21468B]"
+                className="w-full px-0 py-4 text-lg bg-transparent border-0 border-b border-gray-200 focus:outline-none focus:border-black placeholder-gray-400"
               />
             </div>
           </div>
 
-          <div>
+          <div className="pt-8">
             <button
               type="submit"
               disabled={loading}
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-[#21468B] hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#21468B] disabled:opacity-50"
+              className="w-full bg-black text-white py-4 rounded-3xl text-lg font-medium hover:bg-gray-900 transition-colors disabled:opacity-50"
             >
               {loading ? 'Signing in...' : 'Sign in'}
             </button>
           </div>
 
-          <div className="text-sm text-center">
-            <span className="text-gray-600">Don't have an account? </span>
-            <Link href="/auth/register" className="font-medium text-[#21468B] hover:text-blue-700">
+          <div className="text-sm text-center pt-4">
+            <span className="text-gray-500">Don&apos;t have an account? </span>
+            <Link href="/auth/register" className="text-black hover:underline">
               Sign up
             </Link>
           </div>

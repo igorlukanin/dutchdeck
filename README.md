@@ -51,17 +51,26 @@ Dedicated Dutch language learners who want a comprehensive, structured approach 
 - Three Next.js apps (app, admin, web)
 - Database schema with all tables
 - Authentication system (sign up, sign in, sign out)
-- Basic flashcard UI with gestures
-- Progress tracking dashboard
+- Basic flashcard UI with gestures and keyboard controls
+- Progress tracking dashboard with accurate scoring
 - HTTPS local development with Docker nginx proxy
+- ESLint configuration across all apps
 
 ### 🚧 In Progress
 - Multi-language support
 - Assessment test
 - Spaced repetition algorithm
 
-### 📋 Next Steps
-1. Load real words into database
+### 📋 Immediate Priority: Design Transformation
+**🎨 Transform to Oppie-inspired minimal design** - Complete redesign to match clean, minimal aesthetic with:
+- Ultra-large, bold typography (text-6xl/8xl headings)
+- Massive white space and minimal layouts
+- High-contrast black/white flashcards
+- Simple 3-button navigation
+- Mobile-first, clean interface
+
+**Next Steps After Design:**
+1. **Load Duolingo words** - Import 110 prepared Duolingo words from `/data/duolingo-words.txt`
 2. Implement assessment test
 3. Add spaced repetition algorithm
 4. Build admin dashboard
@@ -87,6 +96,7 @@ Dedicated Dutch language learners who want a comprehensive, structured approach 
   - [ ] Set up Vercel deployment pipeline with preview URLs
   - [ ] Configure PostHog for analytics
   - [x] Set up development environment and Git repository
+  - [x] Configure ESLint for code quality and consistency
 
 - [ ] **Admin Dashboard**
   - [ ] Simple admin authentication (your account only)
@@ -120,7 +130,9 @@ Dedicated Dutch language learners who want a comprehensive, structured approach 
   - [x] Tap to reveal translations (multiple languages)
   - [x] Tap-and-hold for extended info (de/het, verb type, examples)
   - [x] Swipe gestures for navigation
+  - [x] Keyboard controls (↑ for know, ↓ for don't know, space to flip)
   - [x] Mobile-optimized touch interactions
+  - [x] Desktop-friendly controls
 
 - [ ] **Spaced Repetition Algorithm**
   - [ ] Implement SM-2 or similar algorithm
@@ -138,8 +150,26 @@ Dedicated Dutch language learners who want a comprehensive, structured approach 
   - [x] Words learned counter
   - [x] Current streak tracking
   - [x] Daily/weekly statistics
-  - [x] Accuracy metrics
+  - [x] Accurate practice session scoring
   - [x] CEFR level progress indicator
+
+- [ ] **🎨 PRIORITY: Oppie-Inspired Design Transformation**
+  - [ ] **Phase 1: Typography & Layout Foundation**
+    - [ ] Implement ultra-large heading typography system (text-6xl/8xl)
+    - [ ] Strip away complex layouts, maximize white space
+    - [ ] Create mobile-first, minimal page structures
+  - [ ] **Phase 2: Flashcard Redesign**
+    - [ ] Redesign cards with pure black/white high-contrast
+    - [ ] Remove borders, shadows, complex details
+    - [ ] Implement clean swipe gestures
+  - [ ] **Phase 3: Navigation Simplification**
+    - [ ] Create minimal 3-button bottom navigation
+    - [ ] Remove complex header navigation
+    - [ ] Implement clean, icon-based controls
+  - [ ] **Phase 4: Branding & Polish**
+    - [ ] Add subtle "DutchDeck" branding placement
+    - [ ] Implement simple progress indicators
+    - [ ] Final polish and spacing adjustments
 
 - [x] **Basic UI/UX**
   - [x] Clean black-and-white design with Dutch flag accents
@@ -156,7 +186,8 @@ Dedicated Dutch language learners who want a comprehensive, structured approach 
   
 - [ ] **Word Data Management**
   - [ ] Build word import tool for bulk loading
-  - [ ] Duolingo word list processor (2500 words)
+  - [ ] Import prepared Duolingo words (110 words from `/data/duolingo-words.txt`)
+  - [ ] Duolingo word list processor (expand to 2500 words)
   - [ ] Nederlands in gang word processor
   - [ ] CEFR level assignment tool
   - [ ] De/het gender detection and storage

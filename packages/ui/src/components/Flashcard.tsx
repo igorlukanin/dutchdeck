@@ -11,6 +11,7 @@ interface FlashcardProps {
   onKnow: () => void;
   onDontKnow: () => void;
   onNext: () => void;
+  onFlip?: (isFlipped: boolean) => void;
 }
 
 export function Flashcard({ 
@@ -18,13 +19,16 @@ export function Flashcard({
   userLanguages, 
   onKnow, 
   onDontKnow, 
-  onNext 
+  onNext,
+  onFlip 
 }: FlashcardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
 
   const handleTap = () => {
-    setIsFlipped(!isFlipped);
+    const newFlipped = !isFlipped;
+    setIsFlipped(newFlipped);
+    onFlip?.(newFlipped);
   };
 
   const handleLongPress = () => {
@@ -44,7 +48,8 @@ export function Flashcard({
   const resetCard = (wasCorrect = false) => {
     setIsFlipped(false);
     setShowDetails(false);
-    setTimeout(() => onNext(wasCorrect), 300);
+    onFlip?.(false);
+    setTimeout(() => onNext(), 300);
   };
 
   useEffect(() => {
@@ -82,13 +87,9 @@ export function Flashcard({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
+    <div className="h-full w-full">
       <div 
-        className={`
-          relative w-full max-w-md h-96 cursor-pointer
-          transform transition-all duration-300 ease-in-out
-          ${isFlipped ? 'scale-95' : 'scale-100'}
-        `}
+        className="relative w-full h-full cursor-pointer"
         onClick={handleTap}
         onTouchStart={(e) => {
           const touch = e.touches[0];
@@ -120,75 +121,47 @@ export function Flashcard({
           document.addEventListener('touchend', handleTouchEnd);
         }}
       >
-        <div className={`
-          absolute inset-0 bg-white rounded-2xl shadow-lg
-          flex flex-col items-center justify-center p-8
-          border-2 border-gray-200
-          ${isFlipped ? 'border-[#21468B]' : ''}
-        `}>
+        <div className="absolute inset-0 rounded-3xl flex flex-col items-start justify-center p-8">
           {/* Front of card - Dutch word */}
           {!isFlipped && (
-            <div className="text-center">
-              <h2 className="text-4xl font-bold text-gray-800 mb-4">
+            <div className="text-left w-full">
+              <h2 className="heading-large text-black mb-8">
                 {word.dutch}
               </h2>
-              <p className="text-sm text-gray-500">
-                Tap/Space to reveal • ↑ if you know • ↓ if you don't
-              </p>
             </div>
           )}
           
           {/* Back of card - Translations */}
           {isFlipped && (
-            <div className="text-center w-full">
-              <h3 className="text-2xl font-semibold text-[#21468B] mb-6">
+            <div className="text-left w-full">
+              <h3 className="heading-large text-white mb-8">
                 {getTranslations()}
               </h3>
               
               {/* Additional details */}
               {showDetails && (
-                <div className="space-y-3 text-left bg-gray-50 p-4 rounded-lg">
+                <div className="space-y-2 text-left bg-gray-900 p-4 rounded-2xl mb-4">
                   {word.gender && (
-                    <div>
-                      <span className="font-medium text-gray-600">Article:</span>{' '}
-                      <span className="text-[#21468B]">{word.gender}</span>
+                    <div className="text-gray-300 text-sm">
+                      <span className="text-gray-400">Article:</span>{' '}
+                      <span className="text-white">{word.gender}</span>
                     </div>
                   )}
                   {word.verb_type && (
-                    <div>
-                      <span className="font-medium text-gray-600">Verb type:</span>{' '}
-                      <span className="text-[#21468B]">{word.verb_type}</span>
+                    <div className="text-gray-300 text-sm">
+                      <span className="text-gray-400">Type:</span>{' '}
+                      <span className="text-white">{word.verb_type}</span>
                     </div>
                   )}
-                  <div>
-                    <span className="font-medium text-gray-600">Level:</span>{' '}
-                    <span className="text-[#21468B]">{word.cefr_level}</span>
+                  <div className="text-gray-300 text-sm">
+                    <span className="text-gray-400">Level:</span>{' '}
+                    <span className="text-white">{word.cefr_level}</span>
                   </div>
                 </div>
               )}
-              
-              <p className="text-xs text-gray-500 mt-4">
-                Hold to see more details
-              </p>
             </div>
           )}
         </div>
-      </div>
-      
-      {/* Action buttons for desktop */}
-      <div className="hidden md:flex gap-4 mt-8">
-        <button
-          onClick={() => { onDontKnow(); resetCard(false); }}
-          className="px-6 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors"
-        >
-          Don't Know
-        </button>
-        <button
-          onClick={() => { onKnow(); resetCard(true); }}
-          className="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600 transition-colors"
-        >
-          Know
-        </button>
       </div>
     </div>
   );
