@@ -20,7 +20,7 @@ Adults learning Dutch as a second language, starting with Igor, Rita, and Kate M
 Content is pre-loaded; users are not expected to type in their own words to get started. Sources:
 
 - The Dutch Duolingo course vocabulary.
-- A Dutch NT2 coursebook ("the green and blue book") — confirm the exact title/edition with Igor before importing.
+- The Dutch NT2 coursebooks *Nederlands in gang* and *Nederlands in actie* ("the green and blue book").
 - Frequency word lists covering the top 500, 1000, and 5000 most common Dutch words, independent of any coursebook.
 - Photo capture: a user can photograph text (a page, a sign) and pull new words into their deck.
 
