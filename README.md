@@ -30,7 +30,7 @@ Minimal, card-based, high-contrast black-and-white. Ultra-large typography, gene
 
 ## Pricing
 
-One-time payment, not a subscription. An individual tier and a 2-person tier priced at 1.5x the individual price. Exact amounts are undecided.
+A one-time purchase gates full access — no subscription, no free tier. Individual: €39. 2-person: €59 (1.5x individual, rounded to a clean price). €39 is the price the retired prototype already tested.
 
 ## Feedback
 
